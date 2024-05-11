@@ -8,8 +8,8 @@ public abstract class UIForm : MonoBehaviour
 
     public abstract bool SetData();
 
-    public string AddLinkText()
+    private string AddLinkText(string text, string addText, string linkID)
     {
-        return string.Empty;
+        return text + "<link=\"" + linkID + "\">" + addText + "</link>";
     }
 }
