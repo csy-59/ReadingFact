@@ -40,22 +40,22 @@ public class UIManager : MonoSingleton<UIManager>
         uiStack = new Stack<UIBase>();
         
         // 최초로 실행되어야 하는 UI인 HomeScreen을 출력한다.
-        ShowPopup<UIHomeScreen>(Define.UI.UIHomeScreen, out var ui);
+        ShowPopup(Define.UI.UIHomeScreen, out var _);
     }
 
     /// <summary>
     /// 팝업을 생성해서 화면에 출력한다.
     /// 이미 인스턴스를 캐싱해두었다면, 캐싱된 UI를 출력한다.
     /// </summary>
-    public void ShowPopup<T>(string path, out T ui) where T : UIBase
+    public void ShowPopup(string path, out UIBase ui)
     {
         if (TryGetCachedUI(path, out var cachedUI))
         {
-            ui = cachedUI as T;
+            ui = cachedUI;
         }
         else
         {
-            var prefab = Resources.Load<T>(path);
+            var prefab = Resources.Load<UIBase>(path);
             ui = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         }
 
@@ -84,8 +84,11 @@ public class UIManager : MonoSingleton<UIManager>
         topUI.gameObject.SetActive(false);
         topUI.transform.SetParent(cacheCanvas.transform);
         
+        topUI = uiStack.Peek();
         // 자식 팝업이 닫혔으므로 콜백을 보낸다.
-        uiStack.Peek().OnChildClosed();
+        topUI.OnChildClosed();
+        topUI.transform.SetParent(safeArea, false);
+        topUI.gameObject.SetActive(true);
     }
 
     /// <summary>
