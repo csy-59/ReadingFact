@@ -37,6 +37,6 @@ public abstract class UIBase : MonoBehaviour
     /// </summary>
     public void Close()
     {
-        // 닫는 함수.
+        UIManager.Instance.Close();
     }
 }

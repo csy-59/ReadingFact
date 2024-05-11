@@ -39,6 +39,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : Component
             return;
         }
 
+        DontDestroyOnLoad(gameObject);
         isInit = true;
         
         Init();
