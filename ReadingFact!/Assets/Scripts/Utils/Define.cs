@@ -10,8 +10,8 @@ namespace Define
         public const string UIRankScreen = "Prefabs/RankScreen";
     }
 
-    public class PlayerPrefs
+    public class DefinePrefs
     {
-        public const string Name = "Name";
+        public const string USER_INFO = "USER_INFO";
     }
 }

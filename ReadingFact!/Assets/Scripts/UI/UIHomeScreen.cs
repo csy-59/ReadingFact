@@ -8,7 +8,11 @@ using UnityEngine.UI;
 
 public class UIHomeScreen : UIBase
 {
+    /// <summary> 유저가 입력받는 닉네임 </summary>
     [SerializeField] private TMP_InputField inputName;
+    /// <summary> 중복 닉네임 경고 </summary>
+    [SerializeField] private GameObject goSameNameWarning;
+    /// <summary> 시작 버튼 </summary>
     [SerializeField] private Button btnStart;
 
     private void Start()
@@ -18,19 +22,33 @@ public class UIHomeScreen : UIBase
 
     public override void OnOpen()
     {
-        
+        Init();
     }
 
-    public override void OnClose()
+    public override void OnChildClosed()
     {
-        
+        Init();
+    }
+
+    private void Init()
+    {
+        goSameNameWarning.SetActive(false);   
     }
 
     private void OnClickStart()
     {
         if (inputName.text == string.Empty) return;
+
+        var name = inputName.text;
+
+        // 이미 닉네임이 존재한다면 경고를 띄운다. 
+        if (UserManager.Instance.IsUserExist(name))
+        {
+            goSameNameWarning.SetActive(true);
+            return;
+        }
         
-        PlayerPrefs.SetString(Define.PlayerPrefs.Name, inputName.text);
+        UserManager.Instance.AddUser(name);
         
         UIManager.Instance.ShowPopup(Define.UI.UIRankScreen, out var _);
     }
