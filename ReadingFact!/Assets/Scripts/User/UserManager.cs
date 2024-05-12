@@ -58,6 +58,11 @@ public class UserManager : MonoSingleton<UserManager>
         return user.Score;
     }
 
+    public int GetTotalUserCount()
+    {
+        return userInfos.Count;
+    }
+
     /// <summary>
     /// count만큼의 랭커를 반환한다.
     /// 점수가 높은 순서대로 리스트에 들어있다.
@@ -71,5 +76,31 @@ public class UserManager : MonoSingleton<UserManager>
         }
 
         return result;
+    }
+
+    public int GetRank(string userName)
+    {
+        int rank = 0;
+        int lastScore = 0;
+        int count = 0;
+
+        var result = userInfos.OrderByDescending(_ => _.Score).ToList();
+        foreach(var info in result)
+        {
+            ++count;
+
+            if(lastScore != info.Score)
+            {
+                rank = count;
+                lastScore = info.Score;
+            }
+
+            if(info.Name == userName)
+            {
+                return rank;
+            }
+        }
+
+        return -1;
     }
 }

@@ -56,6 +56,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtMyRank: {fileID: 5310500902384831252}
+  txtTotalRank: {fileID: 5286513658583025674}
+  txtLastMyRank: {fileID: 7789048877286022282}
   btnHome: {fileID: 820677850273028325}
   btnRetry: {fileID: 6754501185171484444}
 --- !u!1 &1116033780978715351
