@@ -28,7 +28,7 @@ public class UIFormMain : UIBase
     private void Start()
     {
         UIHelper.AddButtonEvent(btnTrue, OnClickTrue);
-        UIHelper.AddButtonEvent(btnTrue, OnClickFalse);
+        UIHelper.AddButtonEvent(btnFalse, OnClickFalse);
         UIHelper.AddButtonEvent(btnBack, OnClickBack);
         UIHelper.AddButtonEvent(btnSearch, onClickSearch);
         uiInstargram.MainForm = this;
@@ -36,10 +36,8 @@ public class UIFormMain : UIBase
         uiNewsLink.main = this;
     }
 
-    public override void OnOpen()
+    public void OnEnable()
     {
-        base.OnOpen();
-
         uiInstargram.gameObject.SetActive(false);
         uiShorts.gameObject.SetActive(false);
         uiNewsLink.gameObject.SetActive(false);
@@ -49,6 +47,7 @@ public class UIFormMain : UIBase
         isVisiedCluePage = false;
 
         int index = UnityEngine.Random.Range(0, SDManager.Instance.Landing.dataList.Count);
+        Debug.Log(index);
         SDLanding landingData = SDManager.Instance.Landing.dataList[index];
 
         boCurrentLandingPageData = new BoLandingData(landingData);
