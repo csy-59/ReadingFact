@@ -14,6 +14,8 @@ public class UIHomeScreen : UIBase
     [SerializeField] private GameObject goSameNameWarning;
     /// <summary> 시작 버튼 </summary>
     [SerializeField] private Button btnStart;
+    /// <summary> 강제 시작 버튼 </summary>
+    [SerializeField] private Button btnForceStart;
     /// <summary> 랭킹 버튼 </summary>
     [SerializeField] private Button btnRank;
     /// <summary> 방법 버튼 </summary>
@@ -21,6 +23,7 @@ public class UIHomeScreen : UIBase
 
     private void Start()
     {
+        UIHelper.AddButtonEvent(btnForceStart, OnClickForceStart);
         UIHelper.AddButtonEvent(btnStart, OnClickStart);
         UIHelper.AddButtonEvent(btnRank, OnClickRank);
         UIHelper.AddButtonEvent(btnHowTo, OnClickHowTo);
@@ -41,6 +44,11 @@ public class UIHomeScreen : UIBase
         goSameNameWarning.SetActive(false);   
     }
 
+    private void OnClickForceStart()
+    {
+        UserManager.Instance.AddUser("A");
+    }
+
     private void OnClickStart()
     {
         if (inputName.text == string.Empty) return;
@@ -56,7 +64,7 @@ public class UIHomeScreen : UIBase
         
         UserManager.Instance.AddUser(name);
         
-        UIManager.Instance.ShowPopup(Define.UI.UIRankScreen, out var _);
+        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 
     private void OnClickRank()

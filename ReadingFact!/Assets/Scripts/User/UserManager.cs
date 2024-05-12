@@ -11,22 +11,14 @@ public class UserManager : MonoSingleton<UserManager>
 {
     private List<UserInfo> userInfos;
     
+    public UserInfo MyUserInfo { get; private set; }
+    
     public override void Init()
     {
         // Json형태로 저장된 유저 데이터를 가져온다.
         var json = PlayerPrefs.GetString(Define.DefinePrefs.USER_INFO,"{}");
         // json을 파싱하여 유저 정보로 세팅한다. 
         userInfos = JsonUtility.FromJson<List<UserInfo>>(json);
-        
-        AddUser("A");
-        AddUser("B");
-        AddUser("C");
-        AddUser("D");
-        
-        SetScore("A", 10);
-        SetScore("B", 20);
-        SetScore("C", 50);
-        SetScore("D", 100);
     }
 
     public bool IsUserExist(string name)
@@ -38,7 +30,11 @@ public class UserManager : MonoSingleton<UserManager>
     {
         var newUser = new UserInfo();
         newUser.Name = name;
-        userInfos.Add(newUser);
+        MyUserInfo = newUser;
+        if (userInfos.Exists(_ => _.Name == name) == false)
+        {
+            userInfos.Add(newUser);
+        }
 
         var json = JsonUtility.ToJson(userInfos);
         PlayerPrefs.SetString(Define.DefinePrefs.USER_INFO, json);
