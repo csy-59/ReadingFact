@@ -20,4 +20,23 @@ namespace Define
     {
         public const string USER_INFO = "USER_INFO";
     }
+
+    public class Score
+    {
+        public const int OnVisitCluePage = 5;
+        public const int OnSuccess = 10;
+        public const int OnFail = 0;
+        public const int InTimeMax = 10;
+        public const int FullTimeScore = 10;
+        public const int TwoThirdTimeScore = 5;
+        public const int OneThirdTimeScore = 1;
+        public const int NoTimeScore = 0;
+    }
+
+    public class Time
+    {
+        public const int MaxThinkTime = 10;
+        public const int FullTimeScore = 10;
+    }
+
 }

@@ -12,6 +12,10 @@ public class UIFormMain : UIBase
     [SerializeField] private Button btnSearch;
     [SerializeField] private Button btnBack;
 
+    [Header("Time")]
+    [SerializeField] private Image TimeProcess;
+    private float deltaTime;
+
     [Header("Forms")]
     [SerializeField] private UIFormInstargram uiInstargram;
     [SerializeField] private UIFormShorts uiShorts;
@@ -24,6 +28,7 @@ public class UIFormMain : UIBase
     private BoLandingData boCurrentLandingPageData;
 
     private bool isVisiedCluePage = false;
+    private bool isPlaying = false;
 
     private void Start()
     {
@@ -46,22 +51,61 @@ public class UIFormMain : UIBase
 
         isVisiedCluePage = false;
 
-        int index = UnityEngine.Random.Range(0, SDManager.Instance.Landing.dataList.Count);
-        Debug.Log(index);
+        int index = GameManager.Instance.GetNextQuiz();
+        if (index <= 0)
+        {
+            Close();
+            return;
+        }
         SDLanding landingData = SDManager.Instance.Landing.dataList[index];
 
         boCurrentLandingPageData = new BoLandingData(landingData);
         OpenForm(boCurrentLandingPageData.SDLanding.ID);
+        deltaTime = 0.0f;
+        isPlaying = true;
+    }
+
+    private void Update()
+    {
+        if(isPlaying)
+            deltaTime += Time.deltaTime;
     }
 
     private void OnClickTrue()
     {
+        OnClickAnswer();
         boCurrentLandingPageData.ShowResult(true);
     }
 
     private void OnClickFalse()
     {
+        OnClickAnswer();
         boCurrentLandingPageData.ShowResult(false);
+    }
+
+    private void OnClickAnswer()
+    {
+        if(isVisiedCluePage)
+        {
+            GameManager.Instance.OnAddScore(Define.Score.OnVisitCluePage);
+        }
+
+        // 시간 관련
+        isPlaying = false;
+        int timeScore = 0;
+        if(deltaTime <= Define.Time.MaxThinkTime/3)
+        {
+            timeScore = Define.Score.FullTimeScore;
+        }
+        else if(deltaTime <= Define.Time.MaxThinkTime/3 * 2)
+        {
+            timeScore = Define.Score.TwoThirdTimeScore;
+        }
+        else if(deltaTime < Define.Time.MaxThinkTime)
+        {
+            timeScore = Define.Score.OneThirdTimeScore;
+        }
+        GameManager.Instance.OnAddScore(timeScore);
     }
 
     private void OnClickBack()
