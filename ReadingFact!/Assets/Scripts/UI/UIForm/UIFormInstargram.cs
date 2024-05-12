@@ -79,6 +79,11 @@ public class UIFormInstargram : UIBase
         }
     }
 
+    public override int GetResearchIndex()
+    {
+        return data.SearchID;
+    }
+
     public void SetData(SDInstar instarData)
     {
         data = instarData;
@@ -116,7 +121,7 @@ public class UIFormInstargram : UIBase
 
             GameObject commentObject = Instantiate(goCommentPrefab);
             UIFormInstaComment commentComponent = commentObject.GetComponent<UIFormInstaComment>();
-            commentComponent.SetData(commentData);
+            commentComponent.SetData(commentData, this);
 
             commentObject.transform.SetParent(srCommentScrollView.content);
             listComment.Add(commentObject);

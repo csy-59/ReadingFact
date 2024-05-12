@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class UIFormMain : UIBase
 {
+    [Header("Buttons")]
     [SerializeField] private Button btnTrue;
     [SerializeField] private Button btnFalse;
     [SerializeField] private Button btnSearch;
     [SerializeField] private Button btnBack;
 
+    [Header("Forms")]
     [SerializeField] private UIFormInstargram uiInstargram;
+    [SerializeField] private UIFormShorts uiShorts;
 
     private Stack<UIBase> windowStack = new Stack<UIBase>();
 
@@ -25,13 +28,14 @@ public class UIFormMain : UIBase
         UIHelper.AddButtonEvent(btnSearch, onClickSearch);
 
         uiInstargram.MainForm = this;
+        uiInstargram.gameObject.SetActive(false);
     }
 
     public override void OnOpen()
     {
         base.OnOpen();
 
-        OpenForm(1);
+        OpenForm(51);
     }
 
     private void OnClickTrue()
@@ -56,6 +60,10 @@ public class UIFormMain : UIBase
             uiInstargram.CloseComment();
             return;
         }
+        else if(top is UIFormShorts && uiShorts.IsCommentOpen)
+        {
+            uiShorts.CloseComment();
+        }
 
         if (windowStack.Count < 2)
             return;
@@ -67,7 +75,11 @@ public class UIFormMain : UIBase
 
     private void onClickSearch()
     {
+        if (windowStack.Count <= 0)
+            return;
 
+        int index = windowStack.Peek().GetResearchIndex();
+        OpenForm(index);
     }
 
     public void OpenForm(int formId)
@@ -82,11 +94,14 @@ public class UIFormMain : UIBase
         {
             uiInstargram.SetData(SDManager.Instance.Instar.dataList.Find(_ => _.ID == formId));
             windowStack.Push(uiInstargram);
+            windowStack.Peek().OnOpen();
         }
         // 쇼츠
         else if(formId <= 100)
         {
-
+            uiShorts.SetData(SDManager.Instance.Short.dataList.Find(_ => _.ID == formId));
+            windowStack.Push(uiShorts);
+            windowStack.Peek().OnOpen();
         }
         // 검색
         else if(formId <= 200)

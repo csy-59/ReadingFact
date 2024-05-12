@@ -7,7 +7,9 @@ using TMPro;
 public class UIClickableText : MonoBehaviour, IPointerClickHandler
 {
     private TextMeshProUGUI text;
-    public UIBase OnClickHandler { get; set; }
+    [SerializeField]
+    private UIBase _onClickHandler;
+    public UIBase OnClickHandler { get => _onClickHandler; set => _onClickHandler = value; }
 
     public void Start()
     {

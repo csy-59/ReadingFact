@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2228707443862202278}
   - component: {fileID: 4503569055879799461}
+  - component: {fileID: 2304521310610784921}
   m_Layer: 5
   m_Name: ShortsPinCommentPrefab
   m_TagString: Untagged
@@ -125,6 +126,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456838773472308941}
   m_CullTransparentMesh: 1
+--- !u!114 &2304521310610784921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456838773472308941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b784418d8ff341248aa7c5d9e0a85cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtId: {fileID: 0}
+  txtContent: {fileID: 2813620532696249137}
 --- !u!1 &929459302823329423
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +435,7 @@ GameObject:
   - component: {fileID: 6989604922501061930}
   - component: {fileID: 5214259127256043966}
   - component: {fileID: 2813620532696249137}
+  - component: {fileID: 2239520333447514798}
   m_Layer: 5
   m_Name: CommentText
   m_TagString: Untagged
@@ -543,6 +559,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2239520333447514798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429340183171528841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dfb0310fdc66024eae1b2153e7e9364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onClickHandler: {fileID: 2304521310610784921}
 --- !u!1 &8466899636149143065
 GameObject:
   m_ObjectHideFlags: 0
