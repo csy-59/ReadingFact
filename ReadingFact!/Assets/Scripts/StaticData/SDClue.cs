@@ -7,11 +7,6 @@ using System;
 public class SDClue : StaticDataBase
 {
     /// <summary>
-    /// 제목
-    /// </summary>
-    public string Title;
-
-    /// <summary>
     /// 내용
     /// </summary>
     public string Content;
