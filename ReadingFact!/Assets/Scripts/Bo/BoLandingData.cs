@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BoLandingData
 {
-    private SDLanding SDRanding;
+    private SDLanding SDLanding;
     
-    public BoLandingData(SDLanding _sdRanding)
+    public BoLandingData(SDLanding data)
     {
-        SDRanding = _sdRanding;
+        SDLanding = data;
     }
 
     /// <summary>
@@ -18,7 +18,7 @@ public class BoLandingData
     public void ShowResult(bool answer)
     {
         // 정답 여부
-        bool isCorrect = answer == SDRanding.Correct;
+        bool isCorrect = answer == SDLanding.Correct;
 
         if (isCorrect)
         {
