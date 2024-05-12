@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// 모든 UI의 기본이 될 클래스
@@ -30,6 +31,11 @@ public abstract class UIBase : MonoBehaviour
     public virtual void OnChildClosed()
     {
         
+    }
+
+    public virtual void OnTextClicked(TMP_LinkInfo info)
+    {
+
     }
     
     /// <summary>
