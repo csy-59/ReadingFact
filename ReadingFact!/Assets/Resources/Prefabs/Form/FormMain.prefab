@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 6742370573725218459}
   - component: {fileID: 1288745957900149897}
   - component: {fileID: 3614399991164129684}
+  - component: {fileID: 7656666789692841647}
   m_Layer: 5
   m_Name: FormMain
   m_TagString: Untagged
@@ -564,6 +565,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7656666789692841647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766275509578254092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6df7e4c6f93432ca3dc01ac1ab4155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnTrue: {fileID: 3828356555531101551}
+  btnFalse: {fileID: 7798695008239843156}
+  btnSearch: {fileID: 4048934107181602147}
+  btnBack: {fileID: 3527649855098708647}
 --- !u!1 &6307770465875162512
 GameObject:
   m_ObjectHideFlags: 0

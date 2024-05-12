@@ -10,6 +10,9 @@ namespace Define
         public const string UIRankScreen = "Prefabs/RankScreen";
         public const string UIRankingScreen = "Prefabs/RankingScreen";
         public const string UIHowToScreen = "Prefabs/HowToScreen";
+        public const string UIFailScreen = "Prefabs/FailScreen";
+        public const string UIScoreScreen = "Prefabs/ScoreScreen";
+        public const string UISuccessScreen = "Prefabs/SuccessScreen";
     }
 
     public class DefinePrefs
