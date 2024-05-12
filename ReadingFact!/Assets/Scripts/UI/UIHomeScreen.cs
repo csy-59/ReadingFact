@@ -47,6 +47,8 @@ public class UIHomeScreen : UIBase
     private void OnClickForceStart()
     {
         UserManager.Instance.AddUser("A");
+        
+        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 
     private void OnClickStart()
