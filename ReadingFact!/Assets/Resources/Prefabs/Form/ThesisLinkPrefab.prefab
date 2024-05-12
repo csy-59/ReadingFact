@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4536424456973049330}
   - component: {fileID: 8622758670575194766}
+  - component: {fileID: 4293016155959548693}
   m_Layer: 5
   m_Name: ThesisLinkPrefab
   m_TagString: Untagged
@@ -50,6 +51,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666936800992134258}
   m_CullTransparentMesh: 1
+--- !u!114 &4293016155959548693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666936800992134258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8276e58d682e13042b684adeaba40d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtTitle: {fileID: 3404036346175878401}
+  image: {fileID: 6067484384832651271}
+  button: {fileID: 1405130757284813263}
 --- !u!1 &2579410595501504797
 GameObject:
   m_ObjectHideFlags: 0

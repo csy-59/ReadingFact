@@ -14,6 +14,7 @@ public class UIFormShorts : UIBase
     [SerializeField] private VideoPlayer vpVideoPlayer;
 
     [Header("Comment")]
+    [SerializeField] private Button ShowCommentBtn;
     [SerializeField] private RectTransform tranCommentPanel;
     [SerializeField] private ScrollRect scCommentScrollRect;
     [SerializeField] private GameObject goCommentPrefab;
@@ -23,6 +24,11 @@ public class UIFormShorts : UIBase
     public bool IsCommentOpen { get; private set; }
 
     SDShort data;
+
+    public void Start()
+    {
+        UIHelper.AddButtonEvent(ShowCommentBtn, OpenComment);
+    }
 
     public override void OnOpen()
     {
@@ -42,10 +48,20 @@ public class UIFormShorts : UIBase
             MainForm.OpenForm(index);
         }
     }
+    public override int GetResearchIndex()
+    {
+        return data.SearchID;
+    }
 
     public void SetData(SDShort shortData)
     {
         data = shortData;
+
+        foreach (var comment in listComment)
+        {
+            Destroy(comment);
+        }
+        listComment.Clear();
 
         // 타이틀 설정
         txtTitle.SetText(shortData.Title);
@@ -72,6 +88,9 @@ public class UIFormShorts : UIBase
 
     private void OpenComment()
     {
+        if (this.gameObject.activeSelf == false)
+            return;
+
         StartCoroutine(OpenCommentCoroutine());
         IsCommentOpen = true;
     }
@@ -85,6 +104,9 @@ public class UIFormShorts : UIBase
 
     public void CloseComment()
     {
+        if (this.gameObject.activeSelf == false)
+            return;
+
         StartCoroutine(CloseCommentCoroutine());
         IsCommentOpen = false;
     }

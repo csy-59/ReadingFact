@@ -15,10 +15,15 @@ public class UIFormMain : UIBase
     [Header("Forms")]
     [SerializeField] private UIFormInstargram uiInstargram;
     [SerializeField] private UIFormShorts uiShorts;
+    [SerializeField] private UIFormNewsLInk uiNewsLink;
+    [SerializeField] private UIFormNews uiNews;
+    [SerializeField] private UIFormThesis uiThesis;
 
     private Stack<UIBase> windowStack = new Stack<UIBase>();
 
     private BoLandingData boCurrentLandingPageData;
+
+    private bool isVisiedCluePage = false;
 
     private void Start()
     {
@@ -26,26 +31,38 @@ public class UIFormMain : UIBase
         UIHelper.AddButtonEvent(btnTrue, OnClickFalse);
         UIHelper.AddButtonEvent(btnBack, OnClickBack);
         UIHelper.AddButtonEvent(btnSearch, onClickSearch);
-
         uiInstargram.MainForm = this;
-        uiInstargram.gameObject.SetActive(false);
+        uiShorts.MainForm = this;
+        uiNewsLink.main = this;
     }
 
     public override void OnOpen()
     {
         base.OnOpen();
 
-        OpenForm(51);
+        uiInstargram.gameObject.SetActive(false);
+        uiShorts.gameObject.SetActive(false);
+        uiNewsLink.gameObject.SetActive(false);
+        uiNews.gameObject.SetActive(false);
+        uiThesis.gameObject.SetActive(false);
+
+        isVisiedCluePage = false;
+
+        int index = UnityEngine.Random.Range(0, SDManager.Instance.Landing.dataList.Count);
+        SDLanding landingData = SDManager.Instance.Landing.dataList[index];
+
+        boCurrentLandingPageData = new BoLandingData(landingData);
+        OpenForm(boCurrentLandingPageData.SDLanding.ID);
     }
 
     private void OnClickTrue()
     {
-        
+        boCurrentLandingPageData.ShowResult(true);
     }
 
     private void OnClickFalse()
     {
-        
+        boCurrentLandingPageData.ShowResult(false);
     }
 
     private void OnClickBack()
@@ -89,6 +106,11 @@ public class UIFormMain : UIBase
             windowStack.Peek().gameObject.SetActive(false);
         }
 
+        if(isVisiedCluePage == false && boCurrentLandingPageData.SDLanding.ClueID == formId)
+        {
+            isVisiedCluePage = true;
+        }
+
         // 인스타
         if (formId > 0 && formId <= 50)
         {
@@ -106,17 +128,25 @@ public class UIFormMain : UIBase
         // 검색
         else if(formId <= 200)
         {
-
+            uiNewsLink.SetData(SDManager.Instance.Search.dataList.Find(_ => _.ID == formId));
+            windowStack.Push(uiNewsLink);
+            windowStack.Peek().OnOpen();
         }
         // 뉴스
         else if(formId <= 300)
         {
-
+            uiNews.SetData(SDManager.Instance.News.dataList.Find(_ => _.ID == formId));
+            windowStack.Push(uiNews);
+            windowStack.Peek().OnOpen();
         }
         // 논문
         else if(formId <= 400)
         {
-
+            uiThesis.SetData(SDManager.Instance.Thesis.dataList.Find(_ => _.ID == formId));
+            windowStack.Push(uiThesis);
+            windowStack.Peek().OnOpen();
         }
+
+        windowStack.Peek().gameObject.SetActive(true);
     }
 }

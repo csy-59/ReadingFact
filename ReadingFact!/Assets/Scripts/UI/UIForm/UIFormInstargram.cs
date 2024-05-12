@@ -23,6 +23,7 @@ public class UIFormInstargram : UIBase
     // 댓글
     [Header("Comment")]
     [SerializeField] private UIClickableText txtShowCommentTMP_Text;
+    [SerializeField] private Button btnShowComment;
     [SerializeField] private RectTransform transCommentPanel;
     [SerializeField] private ScrollRect srCommentScrollView;
     [SerializeField] private GameObject goCommentPrefab;
@@ -42,23 +43,12 @@ public class UIFormInstargram : UIBase
     {
         txtMainTMP_Text.OnClickHandler = this;
         txtShowCommentTMP_Text.OnClickHandler = this;
+        UIHelper.AddButtonEvent(btnShowComment, OpenComment);
     }
 
     public override void OnOpen()
     {
         base.OnOpen();
-
-        foreach(var image in listImages)
-        {
-            Destroy(image);
-        }
-
-        foreach(var comment in listComment)
-        {
-            Destroy(comment);
-        }
-
-        CloseComment();
     }
 
     public override void OnTextClicked(TMP_LinkInfo info)
@@ -87,6 +77,18 @@ public class UIFormInstargram : UIBase
     public void SetData(SDInstar instarData)
     {
         data = instarData;
+
+        foreach (var image in listImages)
+        {
+            Destroy(image);
+        }
+        listImages.Clear();
+
+        foreach (var comment in listComment)
+        {
+            Destroy(comment);
+        }
+        listComment.Clear();
 
         string tempText = string.Empty;
         var tempTexts = instarData.Content.Split('\n');
@@ -126,10 +128,15 @@ public class UIFormInstargram : UIBase
             commentObject.transform.SetParent(srCommentScrollView.content);
             listComment.Add(commentObject);
         }
+
+        CloseComment();
     }
 
     private void OpenComment()
     {
+        if (this.gameObject.activeSelf == false)
+            return;
+
         StartCoroutine(OpenCommentCoroutine());
         IsCommentOpen = true;
     }
@@ -143,6 +150,9 @@ public class UIFormInstargram : UIBase
 
     public void CloseComment()
     {
+        if (this.gameObject.activeSelf == false)
+            return;
+
         StartCoroutine(CloseCommentCoroutine());
         IsCommentOpen = false;
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoLandingData
 {
-    private SDLanding SDLanding;
+    public SDLanding SDLanding { get; private set; }
     
     public BoLandingData(SDLanding data)
     {
