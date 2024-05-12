@@ -23,12 +23,18 @@ public class BoLandingData
         if (isCorrect)
         {
             GameManager.Instance.OnAddScore(Define.Score.OnSuccess);
-            UIManager.Instance.ShowPopup(Define.UI.UISuccessScreen, out var _);
+            UIBase SuccessScreen;
+            UIManager.Instance.ShowPopup(Define.UI.UISuccessScreen, out SuccessScreen);
+            SDClue sdClue = SDManager.Instance.Clue.dataList.Find(_ => _.ID == SDLanding.ReasonID);
+            (SuccessScreen as UISuccessScreen).Set(sdClue);
         }
         else
         {
             GameManager.Instance.OnAddScore(Define.Score.OnFail);
-            UIManager.Instance.ShowPopup(Define.UI.UIFailScreen, out var _);
+            UIBase FailScreen;
+            UIManager.Instance.ShowPopup(Define.UI.UIFailScreen, out FailScreen);
+            SDClue sdClue = SDManager.Instance.Clue.dataList.Find(_ => _.ID == SDLanding.ReasonID);
+            (FailScreen as UIFailScreen).Set(sdClue);
         }
     }
 }

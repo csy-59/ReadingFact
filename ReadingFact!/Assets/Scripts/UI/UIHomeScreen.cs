@@ -47,7 +47,9 @@ public class UIHomeScreen : UIBase
     private void OnClickForceStart()
     {
         UserManager.Instance.AddUser("A");
-        
+
+
+        GameManager.Instance.StartGame();
         UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 
@@ -65,7 +67,8 @@ public class UIHomeScreen : UIBase
         }
         
         UserManager.Instance.AddUser(name);
-        
+
+        GameManager.Instance.StartGame();
         UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 

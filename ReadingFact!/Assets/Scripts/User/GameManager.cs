@@ -6,7 +6,6 @@ public class GameManager : MonoSingleton<GameManager>
 {
     private int QuizCount = 0;
     private const int QuizeMaxCount = 5;
-    private int Score = 0;
 
     private bool[] HasQuized;
 
@@ -29,38 +28,41 @@ public class GameManager : MonoSingleton<GameManager>
         }
 
         QuizCount = QuizeMaxCount;
-        Score = 0;
+        UserManager.Instance.MyUserInfo.Score = 0;
     }
 
     public void EndGame()
     {
-        UserManager.Instance.SetScore(name, Score);
+        UserManager.Instance.SetScore(UserManager.Instance.MyUserInfo.Name, UserManager.Instance.MyUserInfo.Score);
         UIManager.Instance.ShowPopup(Define.UI.UIScoreScreen, out var _);
     }
 
     public void OnAddScore(int addScore)
     {
-        Score += addScore;
+        UserManager.Instance.MyUserInfo.Score += addScore;
     }
     
     public int GetNextQuiz()
     {
-        if(--QuizCount <= 0)
+        QuizCount -= 1;
+        if(QuizCount < 0)
         {
-            EndGame();
-            return 0;
+            return -1;
         }
 
         bool moreQuiz = false;
         foreach(var isQuized in HasQuized)
         {
-            if (isQuized == false) moreQuiz = true;
+            if (isQuized == false)
+            {
+                moreQuiz = true;
+                break;
+            }
         }
 
         if (moreQuiz == false)
         {
-            EndGame();
-            return 0;
+            return -1;
         }
 
         int totalQuizCount = HasQuized.Length;
@@ -69,6 +71,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             index = Random.Range(0, totalQuizCount);
         } while (HasQuized[index] == true);
+        HasQuized[index] = true;
 
         return index;
     }

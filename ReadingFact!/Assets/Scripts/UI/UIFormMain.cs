@@ -52,23 +52,27 @@ public class UIFormMain : UIBase
         isVisiedCluePage = false;
 
         int index = GameManager.Instance.GetNextQuiz();
-        if (index <= 0)
+        if (index < 0)
         {
             Close();
+            GameManager.Instance.EndGame();
             return;
         }
         SDLanding landingData = SDManager.Instance.Landing.dataList[index];
 
-        boCurrentLandingPageData = new BoLandingData(landingData);
-        OpenForm(boCurrentLandingPageData.SDLanding.ID);
         deltaTime = 0.0f;
         isPlaying = true;
+        boCurrentLandingPageData = new BoLandingData(landingData);
+        OpenForm(boCurrentLandingPageData.SDLanding.ID);
     }
 
     private void Update()
     {
         if(isPlaying)
+        {
             deltaTime += Time.deltaTime;
+            TimeProcess.fillAmount = 1 - deltaTime / Define.Time.MaxThinkTime;
+        }
     }
 
     private void OnClickTrue()

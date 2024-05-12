@@ -31,5 +31,7 @@ public class UIRankScreen : UIBase
     private void OnClickRetry()
     {
         Close();
+        GameManager.Instance.StartGame();
+        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 }

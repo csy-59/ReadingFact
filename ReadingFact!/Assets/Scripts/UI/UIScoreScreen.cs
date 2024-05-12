@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class UIScoreScreen : MonoBehaviour
+public class UIScoreScreen : UIBase
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI txtScore;
+    [SerializeField] private Button btnNext;
+
+    public void Start()
     {
-        
+        UIHelper.AddButtonEvent(btnNext, OnClickNext);
+    }
+    public override void OnOpen()
+    {
+        base.OnOpen();
+
+        txtScore.SetText(UserManager.Instance.MyUserInfo.Score.ToString());
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClickNext()
     {
-        
+        Close();
+        UIManager.Instance.ShowPopup(Define.UI.UIRankScreen, out var _);
     }
 }
