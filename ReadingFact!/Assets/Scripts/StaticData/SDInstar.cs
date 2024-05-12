@@ -16,6 +16,10 @@ public class SDInstar : StaticDataBase
     /// </summary>
     public List<int> CommentList;
     /// <summary>
+    /// 이미지 경로
+    /// </summary>
+    public List<string> ImagePath;
+    /// <summary>
     /// 검색 아이디
     /// </summary>
     public int SearchID;
