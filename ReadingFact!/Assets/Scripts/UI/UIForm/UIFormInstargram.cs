@@ -17,8 +17,8 @@ public class UIFormInstargram : UIBase
     [SerializeField] private RectTransform transMainTextRect;
     [SerializeField] private TextMeshProUGUI txtMainText;
     [SerializeField] private UIClickableText txtMainTMP_Text;
-    static readonly string strMainBsicForm = "<b><color=black>reading_fact</color></b> %s <#C1C1C1><link=\"OpenContent\">더보기</link></color>";
-    static readonly string strMainFullForm = "<b><color=black>reading_fact</color></b> %s";
+    static readonly string strMainBsicForm = "<b><color=black>reading_fact</color></b> {0} <#C1C1C1><link=\"OpenContent\">더보기</link></color>";
+    static readonly string strMainFullForm = "<b><color=black>reading_fact</color></b> {0}";
 
     // 댓글
     [Header("Comment")]
@@ -31,7 +31,7 @@ public class UIFormInstargram : UIBase
     private SDInstar data;
     private string simpleContect;
 
-    public UIFormMain mainForm { get; set; }
+    public UIFormMain MainForm { get; set; }
 
     // 검색 시 필요한 데이터
     public int SearchID { get; set; }
@@ -57,6 +57,8 @@ public class UIFormInstargram : UIBase
         {
             Destroy(comment);
         }
+
+        CloseComment();
     }
 
     public override void OnTextClicked(TMP_LinkInfo info)
@@ -73,7 +75,7 @@ public class UIFormInstargram : UIBase
         else
         {
             int index = int.Parse(linkId);
-            mainForm.OpenForm(index);
+            MainForm.OpenForm(index);
         }
     }
 
@@ -93,7 +95,7 @@ public class UIFormInstargram : UIBase
         }
 
         // 내용 설정
-        txtMainText.SetText(simpleContect);
+        txtMainText.SetText(string.Format(strMainBsicForm, simpleContect));
         transMainTextRect.sizeDelta = new Vector2(transMainTextRect.rect.width, txtMainText.preferredHeight);
 
         // 검색 정보
@@ -124,6 +126,7 @@ public class UIFormInstargram : UIBase
     private void OpenComment()
     {
         StartCoroutine(OpenCommentCoroutine());
+        IsCommentOpen = true;
     }
 
     IEnumerator OpenCommentCoroutine()
@@ -136,6 +139,7 @@ public class UIFormInstargram : UIBase
     public void CloseComment()
     {
         StartCoroutine(CloseCommentCoroutine());
+        IsCommentOpen = false;
     }
 
     IEnumerator CloseCommentCoroutine()

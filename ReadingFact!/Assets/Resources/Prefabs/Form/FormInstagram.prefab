@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 601.6001}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &7522065658881365208
@@ -891,10 +891,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   srImageScrollView: {fileID: 3260964780367981487}
-  transMainText: {fileID: 1793019503706689916}
+  transMainTextRect: {fileID: 1793019503706689916}
   txtMainText: {fileID: 4941382092513028618}
-  txtMainTMP_Text: {fileID: 4941382092513028618}
-  txtShowCommentTMP_Text: {fileID: 7142169316118725847}
+  txtMainTMP_Text: {fileID: 8186195078957124249}
+  txtShowCommentTMP_Text: {fileID: 4652191848617971672}
   transCommentPanel: {fileID: 2388241163920961176}
   srCommentScrollView: {fileID: 8733212030285004276}
   goCommentPrefab: {fileID: 456838773472308941, guid: 8d7e910b2afa9bf4285c093286bef00b, type: 3}
@@ -2714,8 +2714,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5894298131832276725}
   m_HandleRect: {fileID: 1883543788323148038}
   m_Direction: 2
-  m_Value: 0.000000101454695
-  m_Size: 0.43137985
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -13,7 +13,7 @@ public class UIFormMain : UIBase
 
     [SerializeField] private UIFormInstargram uiInstargram;
 
-    private Stack<UIBase> windowStack;
+    private Stack<UIBase> windowStack = new Stack<UIBase>();
 
     private BoLandingData boCurrentLandingPageData;
 
@@ -23,12 +23,15 @@ public class UIFormMain : UIBase
         UIHelper.AddButtonEvent(btnTrue, OnClickFalse);
         UIHelper.AddButtonEvent(btnBack, OnClickBack);
         UIHelper.AddButtonEvent(btnSearch, onClickSearch);
+
+        uiInstargram.MainForm = this;
     }
 
     public override void OnOpen()
     {
         base.OnOpen();
 
+        OpenForm(1);
     }
 
     private void OnClickTrue()
@@ -44,14 +47,18 @@ public class UIFormMain : UIBase
     private void OnClickBack()
     {
         // 더 이상 넘어가지 않음
-        if (windowStack.Count < 2)
+        if (windowStack.Count < 1)
             return;
 
         UIBase top = windowStack.Peek();
-        if(top as UIFormInstargram && uiInstargram.IsCommentOpen)
+        if(top is UIFormInstargram && uiInstargram.IsCommentOpen)
         {
             uiInstargram.CloseComment();
+            return;
         }
+
+        if (windowStack.Count < 2)
+            return;
 
         top.gameObject.SetActive(false);
         windowStack.Pop();
