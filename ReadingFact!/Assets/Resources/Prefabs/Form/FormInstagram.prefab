@@ -755,11 +755,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3827888050705076025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &6025972445023980858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   srImageScrollView: {fileID: 3260964780367981487}
+  ImagePrefab: {fileID: 4777796979714248522, guid: 09add186472225c488215a81f77e3f57, type: 3}
   transMainTextRect: {fileID: 1793019503706689916}
   txtMainText: {fileID: 4941382092513028618}
   txtMainTMP_Text: {fileID: 8186195078957124249}
@@ -1885,7 +1886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 360, y: 0}
   m_SizeDelta: {x: 720, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &332546378316844354

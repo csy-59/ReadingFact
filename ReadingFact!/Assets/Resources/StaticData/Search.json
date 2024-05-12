@@ -4,6 +4,11 @@
       "ID": 101,
       "SearchContent": "찬물 세안",
       "CommentList": [201]
+    },
+    {
+      "ID": 102,
+      "SearchContent": "변OO",
+      "CommentList": [201, 202]
     }
   ]
 }

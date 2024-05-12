@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2228707443862202278}
   - component: {fileID: 4503569055879799461}
+  - component: {fileID: 4473966308913055704}
   m_Layer: 5
   m_Name: InstarCommentPrefab
   m_TagString: Untagged
@@ -123,6 +124,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456838773472308941}
   m_CullTransparentMesh: 1
+--- !u!114 &4473966308913055704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456838773472308941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3c5415b63e4cd4c9105fac131e8e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtContent: {fileID: 231699081351157006}
 --- !u!1 &704567445351972463
 GameObject:
   m_ObjectHideFlags: 0

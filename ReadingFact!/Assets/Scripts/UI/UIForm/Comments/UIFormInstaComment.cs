@@ -5,14 +5,12 @@ using TMPro;
 
 public class UIFormInstaComment : UIBase
 {
-    [SerializeField] private TextMeshProUGUI txtId;
     [SerializeField] private TextMeshProUGUI txtContent;
     private UIFormInstargram InstagramMain;
 
     public void SetData(SDComment data, UIFormInstargram main)
     {
-        txtId.SetText(data.NickName);
-        txtContent.SetText(data.Content);
+        txtContent.SetText(string.Format("<b><color=black>{0}</color></b> {1}", data.NickName, data.Content));
         InstagramMain = main;
     }
 

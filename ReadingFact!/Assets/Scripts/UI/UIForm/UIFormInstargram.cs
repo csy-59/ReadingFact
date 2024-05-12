@@ -10,7 +10,8 @@ public class UIFormInstargram : UIBase
     // 이미지 스와이핑
     [Header("Images")]
     [SerializeField] private ScrollRect srImageScrollView;
-    private List<Image> listImages = new List<Image>();
+    [SerializeField] private GameObject ImagePrefab;
+    private List<GameObject> listImages = new List<GameObject>();
 
     // 내용
     [Header("Content")]
@@ -111,9 +112,11 @@ public class UIFormInstargram : UIBase
         // 이미지 설정
         foreach (var path in instarData.ImagePath)
         {
-            Image image = Resources.Load<Image>(path);
-            image.transform.SetParent(srImageScrollView.content);
-            listImages.Add(image);
+            GameObject go = Instantiate(ImagePrefab);
+            Image im = go.GetComponent<Image>();
+            im.sprite = Resources.Load<Sprite>(path);
+            go.transform.SetParent(srImageScrollView.content);
+            listImages.Add(go);
         }
 
         // 댓글 설정
