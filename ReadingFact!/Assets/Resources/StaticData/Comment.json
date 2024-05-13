@@ -2,8 +2,33 @@
   "dataList": [
     {
       "ID": 1,
-      "NickName": "가상의 닉네임",
-      "Content": "내용내용내용"
+      "NickName": "성이름",
+      "Content": "제목이 너무 자극적인 거 아닌가..."
+    },
+    {
+      "ID": 2,
+      "NickName": "변00 보고싶다",
+      "Content": "제목을 이런 식으로 작성하시면 배우가 욕 먹을 수도 있어요;"
+    },
+    {
+      "ID": 3,
+      "NickName": "asdflkjksf",
+      "Content": "진짜 비호감이네 ㅋㅋ"
+    },
+    {
+      "ID": 4,
+      "NickName": "kimmanji",
+      "Content": "아빠가 똑똑해도 문제가 있을 수도 있구나"
+    },
+    {
+      "ID": 5,
+      "NickName": "이유리",
+      "Content": "이제는 배우자 고를 때도 적당히 똑똑한 사람으로 골라야 하나 ㅋㅋ"
+    },
+    {
+      "ID": 6,
+      "NickName": "김민수",
+      "Content": "그럼 나는 애 낳으면 안 되겠네,, 너무 똑똑해서,,"
     }
   ]
 }

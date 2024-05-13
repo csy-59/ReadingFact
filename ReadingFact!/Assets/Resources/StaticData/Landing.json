@@ -3,7 +3,7 @@
     {
       "ID": 1,
       "Correct": false,
-      "ClueID": 202,
+      "ClueID": 201,
       "ReasonID": 1
     },
     {
@@ -15,8 +15,50 @@
     {
       "ID": 51,
       "Correct": false,
-      "ClueID": 201,
+      "ClueID": 202,
       "ReasonID": 3
+    },
+    {
+      "ID": 52,
+      "Correct": false,
+      "ClueID": 203,
+      "ReasonID": 4
+    },
+    {
+      "ID": 5,
+      "Correct": true,
+      "ClueID": 204,
+      "ReasonID": 5
+    },
+    {
+      "ID": 6,
+      "Correct": false,
+      "ClueID": 205,
+      "ReasonID": 6
+    },
+    {
+      "ID": 7,
+      "Correct": false,
+      "ClueID": 302,
+      "ReasonID": 7
+    },
+    {
+      "ID": 8,
+      "Correct": false,
+      "ClueID": 206,
+      "ReasonID": 8
+    },
+    {
+      "ID": 53,
+      "Correct": true,
+      "ClueID": 207,
+      "ReasonID": 9
+    },
+    {
+      "ID": 10,
+      "Correct": false,
+      "ClueID": 208,
+      "ReasonID": 10
     }
   ]
 }
