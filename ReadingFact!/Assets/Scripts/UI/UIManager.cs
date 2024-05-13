@@ -41,6 +41,28 @@ public class UIManager : MonoSingleton<UIManager>
         
         // 최초로 실행되어야 하는 UI인 HomeScreen을 출력한다.
         ShowPopup(Define.UI.UIHomeScreen, out var _);
+        
+        var setWidth = 720;
+        var setHeight = 1280;
+
+        var deviceWidth = Screen.width; // 기기 너비 저장
+        var deviceHeight = Screen.height; // 기기 높이 저장
+
+        var setRatio = (float)setWidth / setHeight;
+        var deviceRatio = (float)deviceWidth / deviceHeight;
+        
+        Screen.SetResolution((int)(deviceRatio * setWidth), setHeight, true); // SetResolution 함수 제대로 사용하기
+
+        if (setRatio < deviceRatio) // 기기의 해상도 비가 더 큰 경우
+        {
+            float newWidth = setRatio / deviceRatio; // 새로운 너비
+            Camera.main.rect = new Rect((1f - newWidth) / 2f, 0f, newWidth, 1f); // 새로운 Rect 적용
+        }
+        else // 게임의 해상도 비가 더 큰 경우
+        {
+            float newHeight = deviceRatio / setRatio; // 새로운 높이
+            Camera.main.rect = new Rect(0f, (1f - newHeight) / 2f, 1f, newHeight); // 새로운 Rect 적용
+        }
     }
 
     /// <summary>
