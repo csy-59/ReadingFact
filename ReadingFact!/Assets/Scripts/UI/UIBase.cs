@@ -35,7 +35,7 @@ public abstract class UIBase : MonoBehaviour
 
     public virtual int GetResearchIndex()
     {
-        return 0;
+        return -1;
     }
 
     public virtual void OnTextClicked(TMP_LinkInfo info)

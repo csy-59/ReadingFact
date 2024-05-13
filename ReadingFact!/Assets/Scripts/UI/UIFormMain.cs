@@ -51,6 +51,8 @@ public class UIFormMain : UIBase
 
         isVisiedCluePage = false;
 
+        windowStack.Clear():
+
         int index = GameManager.Instance.GetNextQuiz();
         if (index < 0)
         {
@@ -148,6 +150,9 @@ public class UIFormMain : UIBase
 
     public void OpenForm(int formId)
     {
+        if (formId < 0)
+            return;
+
         if(windowStack.Count >= 1)
         {
             windowStack.Peek().gameObject.SetActive(false);
