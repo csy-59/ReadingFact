@@ -110,6 +110,9 @@ public class UIFormInstargram : UIBase
         SearchID = instarData.SearchID;
 
         // 이미지 설정
+        RectTransform scrollView = srImageScrollView.content;
+        scrollView.anchoredPosition = Vector2.zero;
+
         foreach (var path in instarData.ImagePath)
         {
             GameObject go = Instantiate(ImagePrefab);
@@ -118,7 +121,7 @@ public class UIFormInstargram : UIBase
             go.transform.SetParent(srImageScrollView.content);
             listImages.Add(go);
         }
-
+        
         // 댓글 설정
         foreach (var index in instarData.CommentList)
         {
