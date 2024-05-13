@@ -56,7 +56,7 @@ public class UIFormNewsLInk : UIBase
             {
                 SDThesis thesisData = SDManager.Instance.Thesis.dataList.Find(_ => _.ID == search);
 
-                GameObject thesisObject = Instantiate(goNewsPrefab);
+                GameObject thesisObject = Instantiate(goThesisPrefab);
                 UISearchThesis thesisComponent = thesisObject.GetComponent<UISearchThesis>();
                 thesisComponent.SetData(thesisData, main);
 
