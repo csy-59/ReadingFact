@@ -51,7 +51,7 @@ public class UIFormMain : UIBase
 
         isVisiedCluePage = false;
 
-        windowStack.Clear():
+        windowStack.Clear();
 
         int index = GameManager.Instance.GetNextQuiz();
         if (index < 0)
