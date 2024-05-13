@@ -50,17 +50,17 @@ public class UIManager : MonoSingleton<UIManager>
 
         var setRatio = (float)setWidth / setHeight;
         var deviceRatio = (float)deviceWidth / deviceHeight;
+        
+        Screen.SetResolution((int)(deviceRatio * setWidth), setHeight, true); // SetResolution 함수 제대로 사용하기
 
         if (setRatio < deviceRatio) // 기기의 해상도 비가 더 큰 경우
         {
             float newWidth = setRatio / deviceRatio; // 새로운 너비
-            Screen.SetResolution((int)(setRatio * deviceHeight), deviceHeight, true);
             Camera.main.rect = new Rect((1f - newWidth) / 2f, 0f, newWidth, 1f); // 새로운 Rect 적용
         }
         else // 게임의 해상도 비가 더 큰 경우
         {
             float newHeight = deviceRatio / setRatio; // 새로운 높이
-            Screen.SetResolution(deviceWidth, (int)(deviceWidth / setRatio), true);
             Camera.main.rect = new Rect(0f, (1f - newHeight) / 2f, 1f, newHeight); // 새로운 Rect 적용
         }
     }
