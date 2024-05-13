@@ -41,6 +41,9 @@ public class UIManager : MonoSingleton<UIManager>
         
         // 최초로 실행되어야 하는 UI인 HomeScreen을 출력한다.
         ShowPopup(Define.UI.UIHomeScreen, out var _);
+
+        // 처음 시작할 때 모든 데이터 삭제하기
+        PlayerPrefs.DeleteAll();
     }
 
     /// <summary>

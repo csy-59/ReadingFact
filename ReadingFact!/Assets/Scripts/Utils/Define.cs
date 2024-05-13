@@ -35,7 +35,8 @@ namespace Define
 
     public class Time
     {
-        public const int MaxThinkTime = 10;
+        public const int MaxInstaThinkTime = 30;
+        public const float MaxShortThinkTime = 40f;
         public const int FullTimeScore = 10;
     }
 

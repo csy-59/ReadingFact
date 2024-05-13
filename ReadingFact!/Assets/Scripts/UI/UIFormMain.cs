@@ -29,6 +29,7 @@ public class UIFormMain : UIBase
 
     private bool isVisiedCluePage = false;
     private bool isPlaying = false;
+    private float MaxTime = 0f;
 
     private void Start()
     {
@@ -73,7 +74,7 @@ public class UIFormMain : UIBase
         if(isPlaying)
         {
             deltaTime += Time.deltaTime;
-            TimeProcess.fillAmount = 1 - deltaTime / Define.Time.MaxThinkTime;
+            TimeProcess.fillAmount = 1 - deltaTime / MaxTime;
         }
     }
 
@@ -99,15 +100,15 @@ public class UIFormMain : UIBase
         // 시간 관련
         isPlaying = false;
         int timeScore = 0;
-        if(deltaTime <= Define.Time.MaxThinkTime/3)
+        if(deltaTime <= MaxTime / 3)
         {
             timeScore = Define.Score.FullTimeScore;
         }
-        else if(deltaTime <= Define.Time.MaxThinkTime/3 * 2)
+        else if(deltaTime <= MaxTime / 3 * 2)
         {
             timeScore = Define.Score.TwoThirdTimeScore;
         }
-        else if(deltaTime < Define.Time.MaxThinkTime)
+        else if(deltaTime < MaxTime)
         {
             timeScore = Define.Score.OneThirdTimeScore;
         }
@@ -169,6 +170,11 @@ public class UIFormMain : UIBase
             uiInstargram.SetData(SDManager.Instance.Instar.dataList.Find(_ => _.ID == formId));
             windowStack.Push(uiInstargram);
             windowStack.Peek().OnOpen();
+
+            if (windowStack.Count <= 1)
+            {
+                MaxTime = Define.Time.MaxInstaThinkTime;
+            }
         }
         // 쇼츠
         else if(formId <= 100)
@@ -176,6 +182,11 @@ public class UIFormMain : UIBase
             uiShorts.SetData(SDManager.Instance.Short.dataList.Find(_ => _.ID == formId));
             windowStack.Push(uiShorts);
             windowStack.Peek().OnOpen();
+
+            if (windowStack.Count <= 1)
+            {
+                MaxTime = Define.Time.MaxShortThinkTime;
+            }
         }
         // 검색
         else if(formId <= 200)
@@ -198,6 +209,7 @@ public class UIFormMain : UIBase
             windowStack.Push(uiThesis);
             windowStack.Peek().OnOpen();
         }
+
 
         windowStack.Peek().gameObject.SetActive(true);
     }
