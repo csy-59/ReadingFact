@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<color=red>\uBB38\uD654 : </color> \uBB38\uD654 \uC77C\uBC18"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cfdd8f7778514144e8d42664371f2327, type: 2}
-  m_sharedMaterial: {fileID: 7239368862012971663, guid: cfdd8f7778514144e8d42664371f2327, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
+  m_sharedMaterial: {fileID: -7226101256611258772, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -534,15 +534,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4.\uB0B4\uC6A9\uC785\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e8e39224a1765fc42a0752a97405e9d1, type: 2}
-  m_sharedMaterial: {fileID: 4534941824261553049, guid: e8e39224a1765fc42a0752a97405e9d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
+  m_sharedMaterial: {fileID: -7226101256611258772, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282532418
-  m_fontColor: {r: 0.2603773, g: 0.2603773, b: 0.2603773, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -802,15 +802,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uAE30\uC0AC \uC81C\uBAA9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e8e39224a1765fc42a0752a97405e9d1, type: 2}
-  m_sharedMaterial: {fileID: 4534941824261553049, guid: e8e39224a1765fc42a0752a97405e9d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b86cbe5d6cf67ac45a3753c69d2e0b7a, type: 2}
+  m_sharedMaterial: {fileID: -7314278878166787358, guid: b86cbe5d6cf67ac45a3753c69d2e0b7a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282532418
-  m_fontColor: {r: 0.2603773, g: 0.2603773, b: 0.2603773, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1087,8 +1087,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: htttp://wwww.readingfont.co.kr/article/123456
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1112,8 +1112,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

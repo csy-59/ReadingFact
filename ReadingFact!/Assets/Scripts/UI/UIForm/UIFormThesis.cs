@@ -14,6 +14,6 @@ public class UIFormThesis : UIBase
     {
         txtTitle.SetText(thesisData.TitleKo);
         txtEngTitile.SetText(thesisData.TitleEn);
-        image = Resources.Load<Image>(thesisData.ImagePath);
+        image.sprite = Resources.Load<Sprite>(thesisData.ImagePath);
     }
 }

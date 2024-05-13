@@ -246,14 +246,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -360,8 +360,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC81C\uBAA9 \uC608\uC2DC \uC785\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 594fe8fa5b93e53479fde1e49c82d77a, type: 2}
-  m_sharedMaterial: {fileID: 4422484452466406493, guid: 594fe8fa5b93e53479fde1e49c82d77a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
+  m_sharedMaterial: {fileID: -7226101256611258772, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1552,6 +1552,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813620532696249137, guid: 68f17c610f735724583098b61a05f73f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 44e778ea118706844aabe81879a6aaed, type: 2}
+    - target: {fileID: 2813620532696249137, guid: 68f17c610f735724583098b61a05f73f, type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -1564,8 +1568,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813620532696249137, guid: 68f17c610f735724583098b61a05f73f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2701538772670565249, guid: 44e778ea118706844aabe81879a6aaed, type: 2}
+    - target: {fileID: 2813620532696249137, guid: 68f17c610f735724583098b61a05f73f, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813620532696249137, guid: 68f17c610f735724583098b61a05f73f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

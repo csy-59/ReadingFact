@@ -827,8 +827,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC608\uC2DC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e8e39224a1765fc42a0752a97405e9d1, type: 2}
-  m_sharedMaterial: {fileID: 4534941824261553049, guid: e8e39224a1765fc42a0752a97405e9d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b86cbe5d6cf67ac45a3753c69d2e0b7a, type: 2}
+  m_sharedMaterial: {fileID: -7314278878166787358, guid: b86cbe5d6cf67ac45a3753c69d2e0b7a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
