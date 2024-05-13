@@ -8,7 +8,12 @@
     {
       "ID": 102,
       "SearchContent": "변OO",
-      "CommentList": [201, 202]
+      "CommentList": [ 201, 202 ]
+    },
+    {
+      "ID": 103,
+      "SearchContent": "자폐증 요인",
+      "CommentList": [ 201, 202, 301 ]
     }
   ]
 }
