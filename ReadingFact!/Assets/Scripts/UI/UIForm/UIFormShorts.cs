@@ -63,6 +63,8 @@ public class UIFormShorts : UIBase
         }
         listComment.Clear();
 
+        CloseComment();
+
         // 타이틀 설정
         txtTitle.SetText(shortData.Title);
 

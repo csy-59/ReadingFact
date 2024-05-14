@@ -549,8 +549,8 @@ MonoBehaviour:
     \uB274\uC2A4\uC774\uAC70\uB098 \uBD80\uC2E4\uD55C \uB274\uC2A4\uC77C \uD655\uB960\uC774
     \uB192\uC74C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
-  m_sharedMaterial: {fileID: -7226101256611258772, guid: d259203c4ca7a61448edf71ab5c19193, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 39ecde7831ab4904a9394993881c19ab, type: 2}
+  m_sharedMaterial: {fileID: 211618136248939235, guid: 39ecde7831ab4904a9394993881c19ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

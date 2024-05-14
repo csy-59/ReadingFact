@@ -91,6 +91,8 @@ public class UIFormInstargram : UIBase
         }
         listComment.Clear();
 
+        CloseComment();
+
         string tempText = string.Empty;
         var tempTexts = instarData.Content.Split('\n');
         if(tempTexts[0].Length >= 20)
