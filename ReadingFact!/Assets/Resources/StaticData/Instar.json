@@ -17,35 +17,35 @@
     {
       "ID": 5,
       "Content": "\"제로\" 음료, 없던 당뇨병도 생기게 한다",
-      "CommentList": [ 1, 1, 1 ],
+      "CommentList": [ 13, 14, 15 ],
       "ImagePath": [ "Image/Data/Instagram/501", "Image/Data/Instagram/502" ],
       "SearchID": 105
     },
     {
       "ID": 6,
       "Content": "이제 병원·약국 갈 때 신분증 필수 \"깜빡하면 진료비 다 낼 수도\"",
-      "CommentList": [ 1, 1, 1 ],
+      "CommentList": [ 16, 17, 18 ],
       "ImagePath": [ "Image/Data/Instagram/601", "Image/Data/Instagram/602", "Image/Data/Instagram/603" ],
       "SearchID": 106
     },
     {
       "ID": 7,
       "Content": "\"싸던데 사볼까?\" 중고생 10명 중 7명 중국 직구 이용 경험",
-      "CommentList": [ 1, 1, 1 ],
+      "CommentList": [ 19, 20, 21 ],
       "ImagePath": [ "Image/Data/Instagram/701", "Image/Data/Instagram/702", "Image/Data/Instagram/703" ],
       "SearchID": 107
     },
     {
       "ID": 8,
       "Content": "글루타치온, 건강기능식품으로 간 기능에 좋아",
-      "CommentList": [ 1, 1, 1 ],
+      "CommentList": [ 22, 23, 24 ],
       "ImagePath": [ "Image/Data/Instagram/801", "Image/Data/Instagram/802", "Image/Data/Instagram/803" ],
       "SearchID": 108
     },
     {
       "ID": 10,
       "Content": "아이유 어린이날 맞아 2억 원 기부 \"건강한 어른 되길\"",
-      "CommentList": [ 1, 1, 1 ],
+      "CommentList": [ 28, 29, 30 ],
       "ImagePath": [ "Image/Data/Instagram/1001", "Image/Data/Instagram/1002" ],
       "SearchID": 110
     }

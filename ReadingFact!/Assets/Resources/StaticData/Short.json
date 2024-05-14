@@ -4,24 +4,24 @@
       "ID": 51,
       "Title": "피부 좋아지는 꿀팁",
       "VideoPath": "Video/51",
-      "CommentList": [ 1, 1, 1 ],
-      "FixedComment": 1,
+      "CommentList": [ 7, 8, 9 ],
+      "FixedComment": 31,
       "SearchID": 103
     },
     {
       "ID": 52,
       "Title": "복합 영화관은 청소년 유해 시설인가",
       "VideoPath": "Video/52",
-      "CommentList": [ 1, 1, 1 ],
-      "FixedComment": 1,
+      "CommentList": [ 10, 11, 12 ],
+      "FixedComment": 32,
       "SearchID": 104
     },
     {
       "ID": 53,
       "Title": "바밤바 아니고 벼볌벼",
       "VideoPath": "Video/53",
-      "CommentList": [ 1, 1, 1 ],
-      "FixedComment": 1,
+      "CommentList": [ 25, 26, 27 ],
+      "FixedComment": 33,
       "SearchID": 109
     }
   ]
