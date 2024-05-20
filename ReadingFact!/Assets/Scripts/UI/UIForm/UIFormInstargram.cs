@@ -120,7 +120,7 @@ public class UIFormInstargram : UIBase
             GameObject go = Instantiate(ImagePrefab);
             Image im = go.GetComponent<Image>();
             im.sprite = Resources.Load<Sprite>(path);
-            go.transform.SetParent(srImageScrollView.content);
+            go.transform.SetParent(srImageScrollView.content, false);
             listImages.Add(go);
         }
         
@@ -133,7 +133,7 @@ public class UIFormInstargram : UIBase
             UIFormInstaComment commentComponent = commentObject.GetComponent<UIFormInstaComment>();
             commentComponent.SetData(commentData, this);
 
-            commentObject.transform.SetParent(srCommentScrollView.content);
+            commentObject.transform.SetParent(srCommentScrollView.content, false);
             listComment.Add(commentObject);
         }
 

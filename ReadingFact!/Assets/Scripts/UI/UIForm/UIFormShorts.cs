@@ -83,7 +83,7 @@ public class UIFormShorts : UIBase
             UIFormShortComment commentComponent = commentObject.GetComponent<UIFormShortComment>();
             commentComponent.SetData(commentData, this);
 
-            commentObject.transform.SetParent(scCommentScrollRect.content);
+            commentObject.transform.SetParent(scCommentScrollRect.content, false);
             listComment.Add(commentObject);
         }
     }

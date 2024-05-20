@@ -48,7 +48,7 @@ public class UIFormNewsLInk : UIBase
                 UISearchNews newsComponent = newsObject.GetComponent<UISearchNews>();
                 newsComponent.SetData(newsData, main);
 
-                newsObject.transform.SetParent(scSearchScrollView.content);
+                newsObject.transform.SetParent(scSearchScrollView.content, false);
                 listSearchedList.Add(newsObject);
             }
             // 논문
@@ -60,7 +60,7 @@ public class UIFormNewsLInk : UIBase
                 UISearchThesis thesisComponent = thesisObject.GetComponent<UISearchThesis>();
                 thesisComponent.SetData(thesisData, main);
 
-                thesisObject.transform.SetParent(scSearchScrollView.content);
+                thesisObject.transform.SetParent(scSearchScrollView.content, false);
                 listSearchedList.Add(thesisObject);
             }
         }

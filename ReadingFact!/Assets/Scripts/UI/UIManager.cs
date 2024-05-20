@@ -67,7 +67,7 @@ public class UIManager : MonoSingleton<UIManager>
         {
             // 액티브를 미리 끄고 부모를 옮겨야 추가 연산이 없다.
             topUI.gameObject.SetActive(false);
-            topUI.transform.SetParent(cacheCanvas.transform);
+            topUI.transform.SetParent(cacheCanvas.transform, false);
         }
         
         uiStack.Push(ui);
@@ -85,7 +85,7 @@ public class UIManager : MonoSingleton<UIManager>
         uiStack.Pop();
         topUI.OnClose();
         topUI.gameObject.SetActive(false);
-        topUI.transform.SetParent(cacheCanvas.transform);
+        topUI.transform.SetParent(cacheCanvas.transform, false);
         
         topUI = uiStack.Peek();
         // 자식 팝업이 닫혔으므로 콜백을 보낸다.
