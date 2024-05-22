@@ -9,6 +9,7 @@ public class UIRankScreen : UIBase
 {
     [SerializeField] private TMP_Text txtMyRank;
     [SerializeField] private TMP_Text[] txtTotalRank;
+    [SerializeField] private TMP_Text[] txtImageRank;
 
     [SerializeField] private Button btnHome;
     [SerializeField] private Button btnRetry;
@@ -29,7 +30,14 @@ public class UIRankScreen : UIBase
         foreach(var info in rankInfo)
         {
             ++count;
-            txtTotalRank[count - 1].SetText(string.Format("{0}. {1} - {2}\n", count, info.Name, info.Score));
+            txtTotalRank[count - 1].SetText(string.Format("{0}. {1} - {2}", count, info.Name, info.Score));
+            txtImageRank[count - 1].SetText(info.Name);
+        }
+
+        for(; count<3; ++count)
+        {
+            txtTotalRank[count - 1].SetText(string.Format("{0}.", count));
+            txtImageRank[count - 1].text = string.Empty;
         }
     }
 

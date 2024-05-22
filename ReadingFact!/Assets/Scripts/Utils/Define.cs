@@ -14,6 +14,7 @@ namespace Define
         public const string UIScoreScreen = "Prefabs/ScoreScreen";
         public const string UISuccessScreen = "Prefabs/SuccessScreen";
         public const string UIFormMain = "Prefabs/Form/FormMain";
+        public const string UITutorialScreen = "Prefabs/Tutorial";
     }
 
     public class DefinePrefs

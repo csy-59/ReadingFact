@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIScoreScreen : UIBase
 {
-    [SerializeField] private TextMeshProUGUI txtScore;
+    [SerializeField] private TextMeshProUGUI[] txtScore;
     [SerializeField] private Button btnNext;
 
     public void Start()
@@ -17,7 +17,15 @@ public class UIScoreScreen : UIBase
     {
         base.OnOpen();
 
-        txtScore.SetText(UserManager.Instance.MyUserInfo.Score.ToString());
+        int score = UserManager.Instance.MyUserInfo.Score;
+        int i = 3, j = 100;
+        do
+        {
+            --i;
+            txtScore[i].SetText((score / j).ToString());
+            score = score % j;
+            j /= 10;
+        } while (i > 0);
     }
 
     public void OnClickNext()

@@ -72,6 +72,7 @@ public class UIHomeScreen : UIBase
 
         GameManager.Instance.StartGame();
         UIManager.Instance.ShowPopup(Define.UI.UIHowToScreen, out var _);
+        inputName.text = string.Empty;
         //UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 

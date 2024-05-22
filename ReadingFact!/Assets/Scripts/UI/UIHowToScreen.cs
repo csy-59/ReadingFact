@@ -17,6 +17,6 @@ public class UIHowToScreen : UIBase
     private void OnNext()
     {
         Close();
-        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
+        UIManager.Instance.ShowPopup(Define.UI.UITutorialScreen, out var _);
     }
 }
