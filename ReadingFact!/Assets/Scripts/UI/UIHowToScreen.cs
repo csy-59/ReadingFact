@@ -7,10 +7,16 @@ using UnityEngine.UI;
 
 public class UIHowToScreen : UIBase
 {
-    [SerializeField] private Button btnBack;
+    [SerializeField] private Button btnNext;
 
     private void Start()
     {
-        UIHelper.AddButtonEvent(btnBack, Close);
+        UIHelper.AddButtonEvent(btnNext, OnNext);
+    }
+
+    private void OnNext()
+    {
+        Close();
+        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 }

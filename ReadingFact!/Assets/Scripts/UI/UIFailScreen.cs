@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UIFailScreen : UIBase
 {
+    [SerializeField] private TMP_Text txtTitle;
     [SerializeField] private TMP_Text txtReason;
     [SerializeField] private Button btnNext;
 
@@ -17,6 +18,8 @@ public class UIFailScreen : UIBase
 
     public void Set(SDClue sdClue)
     {
-        txtReason.text = sdClue.Content;
+        string[] reason = sdClue.Content.Split('\n');
+        txtTitle.SetText(reason[0]);
+        txtReason.SetText(reason[1]);
     }
 }

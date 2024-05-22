@@ -21,14 +21,14 @@ public class UIHomeScreen : UIBase
     /// <summary> 랭킹 버튼 </summary>
     [SerializeField] private Button btnRank;
     /// <summary> 방법 버튼 </summary>
-    [SerializeField] private Button btnHowTo;
+    //[SerializeField] private Button btnHowTo;
 
     private void Start()
     {
         UIHelper.AddButtonEvent(btnForceStart, OnClickForceStart);
         UIHelper.AddButtonEvent(btnStart, OnClickStart);
         UIHelper.AddButtonEvent(btnRank, OnClickRank);
-        UIHelper.AddButtonEvent(btnHowTo, OnClickHowTo);
+        //UIHelper.AddButtonEvent(btnHowTo, OnClickHowTo);
     }
 
     public override void OnOpen()
@@ -71,7 +71,8 @@ public class UIHomeScreen : UIBase
         UserManager.Instance.AddUser(name);
 
         GameManager.Instance.StartGame();
-        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
+        UIManager.Instance.ShowPopup(Define.UI.UIHowToScreen, out var _);
+        //UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
     }
 
     private void OnClickRank()

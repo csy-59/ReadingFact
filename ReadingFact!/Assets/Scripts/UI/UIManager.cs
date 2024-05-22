@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// UI를 관리하는 매니저.
@@ -42,8 +43,21 @@ public class UIManager : MonoSingleton<UIManager>
         // 최초로 실행되어야 하는 UI인 HomeScreen을 출력한다.
         ShowPopup(Define.UI.UIHomeScreen, out var _);
 
-        // 처음 시작할 때 모든 데이터 삭제하기
-        PlayerPrefs.DeleteAll();
+        // 해상도 설정
+        Camera cam = Camera.main;
+
+        float screenAspectRatio = (float)Screen.width / Screen.height;
+        float targetAspectRatio = 16f / 9f;
+
+        // 화면 가로 세로 비율에 따라 뷰포트 영역을 조정하는 코드
+        if (screenAspectRatio < 1f)
+        {
+            mainCanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0f;
+        }
+        else
+        {
+            mainCanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 1f;
+        }
     }
 
     /// <summary>
