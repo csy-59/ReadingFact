@@ -9,16 +9,16 @@ using UnityEngine;
 /// </summary>
 public class UserManager : MonoSingleton<UserManager>
 {
-    private List<UserInfo> userInfos;
+    public UserInfoList userInfos;
     
     public UserInfo MyUserInfo { get; private set; }
     
     public override void Init()
     {
         // Json형태로 저장된 유저 데이터를 가져온다.
-        var json = PlayerPrefs.GetString(Define.DefinePrefs.USER_INFO,"{}");
+        var json = PlayerPrefs.GetString(Define.DefinePrefs.USER_INFO, "{}");
         // json을 파싱하여 유저 정보로 세팅한다. 
-        userInfos = JsonUtility.FromJson<List<UserInfo>>(json);
+        userInfos = JsonUtility.FromJson<UserInfoList>(json);
     }
 
     public bool IsUserExist(string name)
@@ -31,9 +31,9 @@ public class UserManager : MonoSingleton<UserManager>
         var newUser = new UserInfo();
         newUser.Name = name;
         MyUserInfo = newUser;
-        if (userInfos.Exists(_ => _.Name == name) == false)
+        if (userInfos.UserInfos.Exists(_ => _.Name == name) == false)
         {
-            userInfos.Add(newUser);
+            userInfos.UserInfos.Add(newUser);
         }
 
         var json = JsonUtility.ToJson(userInfos);
@@ -43,7 +43,7 @@ public class UserManager : MonoSingleton<UserManager>
 
     public void SetScore(string name, int score)
     {
-        var user = userInfos.Find(_ => _.Name == name);
+        var user = userInfos.UserInfos.Find(_ => _.Name == name);
         if (user == null) return;
 
         user.Score = score;
@@ -52,7 +52,7 @@ public class UserManager : MonoSingleton<UserManager>
 
     public int GetScore(string name)
     {
-        var user = userInfos.Find(_ => _.Name == name);
+        var user = userInfos.UserInfos.Find(_ => _.Name == name);
         if (user == null) return 0;
 
         return user.Score;
@@ -60,7 +60,7 @@ public class UserManager : MonoSingleton<UserManager>
 
     public int GetTotalUserCount()
     {
-        return userInfos.Count;
+        return userInfos.UserInfos.Count;
     }
 
     /// <summary>
@@ -69,7 +69,7 @@ public class UserManager : MonoSingleton<UserManager>
     /// </summary>
     public List<UserInfo> GetRanker(int count)
     {
-        var result = userInfos.OrderByDescending(_ => _.Score).ToList();
+        var result = userInfos.UserInfos.OrderByDescending(_ => _.Score).ToList();
         if (result.Count > count)
         {
             result.RemoveRange(count, result.Count - count);
@@ -84,7 +84,7 @@ public class UserManager : MonoSingleton<UserManager>
         int lastScore = 0;
         int count = 0;
 
-        var result = userInfos.OrderByDescending(_ => _.Score).ToList();
+        var result = userInfos.UserInfos.OrderByDescending(_ => _.Score).ToList();
         foreach(var info in result)
         {
             ++count;

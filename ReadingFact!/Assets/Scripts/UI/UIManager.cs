@@ -39,7 +39,8 @@ public class UIManager : MonoSingleton<UIManager>
     {
         cachedUI = new Dictionary<string, UIBase>();
         uiStack = new Stack<UIBase>();
-        
+
+
         // 최초로 실행되어야 하는 UI인 HomeScreen을 출력한다.
         ShowPopup(Define.UI.UIHomeScreen, out var _);
 
@@ -47,7 +48,6 @@ public class UIManager : MonoSingleton<UIManager>
         Camera cam = Camera.main;
 
         float screenAspectRatio = (float)Screen.width / Screen.height;
-        float targetAspectRatio = 16f / 9f;
 
         // 화면 가로 세로 비율에 따라 뷰포트 영역을 조정하는 코드
         if (screenAspectRatio < 1f)

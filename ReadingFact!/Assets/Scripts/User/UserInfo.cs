@@ -10,9 +10,9 @@ using UnityEngine;
 public class UserInfo
 {
     [SerializeField]
-    private string name;
+    public string name;
     [SerializeField]
-    private int score;
+    public int score;
 
     public string Name
     {
@@ -25,4 +25,10 @@ public class UserInfo
         get => score;
         set => score = value;
     }
+}
+
+[System.Serializable]
+public class UserInfoList
+{
+    public List<UserInfo> UserInfos;
 }
