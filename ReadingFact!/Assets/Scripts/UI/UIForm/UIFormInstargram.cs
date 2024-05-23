@@ -47,6 +47,11 @@ public class UIFormInstargram : UIBase
         UIHelper.AddButtonEvent(btnShowComment, OpenComment);
     }
 
+    public void OnEnable()
+    {
+        CloseComment();
+    }
+
     public override void OnOpen()
     {
         base.OnOpen();

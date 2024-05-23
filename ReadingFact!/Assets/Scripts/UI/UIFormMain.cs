@@ -23,6 +23,13 @@ public class UIFormMain : UIBase
     [SerializeField] private UIFormNews uiNews;
     [SerializeField] private UIFormThesis uiThesis;
 
+    [Header("Popup")]
+    [SerializeField] private Transform uiPausePanel;
+    [SerializeField] private Button btnPause;
+    [SerializeField] private Button btnExit;
+    [SerializeField] private Button btnRestart;
+    [SerializeField] private Button btnResume;
+
     private Stack<UIBase> windowStack = new Stack<UIBase>();
 
     private BoLandingData boCurrentLandingPageData;
@@ -37,6 +44,11 @@ public class UIFormMain : UIBase
         UIHelper.AddButtonEvent(btnFalse, OnClickFalse);
         UIHelper.AddButtonEvent(btnBack, OnClickBack);
         UIHelper.AddButtonEvent(btnSearch, onClickSearch);
+
+        UIHelper.AddButtonEvent(btnPause, OnClickPause);
+        UIHelper.AddButtonEvent(btnExit, OnClickQuit);
+        UIHelper.AddButtonEvent(btnRestart, OnClickRestart);
+        UIHelper.AddButtonEvent(btnResume, OnClickResume);
         uiInstargram.MainForm = this;
         uiShorts.MainForm = this;
         uiNewsLink.main = this;
@@ -49,6 +61,9 @@ public class UIFormMain : UIBase
         uiNewsLink.gameObject.SetActive(false);
         uiNews.gameObject.SetActive(false);
         uiThesis.gameObject.SetActive(false);
+        uiPausePanel.gameObject.SetActive(false);
+
+        Time.timeScale = 1f;
 
         isVisiedCluePage = false;
 
@@ -212,5 +227,27 @@ public class UIFormMain : UIBase
 
 
         windowStack.Peek().gameObject.SetActive(true);
+    }
+
+    private void OnClickPause()
+    {
+        uiPausePanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    private void OnClickQuit()
+    {
+        Application.Quit();
+    }
+
+    private void OnClickRestart()
+    {
+        UIManager.Instance.ShowPopup(Define.UI.UIFormMain, out var _);
+    }
+
+    private void OnClickResume()
+    {
+        uiPausePanel.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

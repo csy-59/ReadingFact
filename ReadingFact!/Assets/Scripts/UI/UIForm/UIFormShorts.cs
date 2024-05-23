@@ -30,6 +30,11 @@ public class UIFormShorts : UIBase
         UIHelper.AddButtonEvent(ShowCommentBtn, OpenComment);
     }
 
+    public void OnEnable()
+    {
+        CloseComment();
+    }
+
     public override void OnOpen()
     {
         base.OnOpen();

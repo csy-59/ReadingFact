@@ -22,6 +22,7 @@ public class UIHomeScreen : UIBase
     [SerializeField] private Button btnRank;
     /// <summary> 방법 버튼 </summary>
     //[SerializeField] private Button btnHowTo;
+    [SerializeField] private Button btnExit;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class UIHomeScreen : UIBase
         UIHelper.AddButtonEvent(btnStart, OnClickStart);
         UIHelper.AddButtonEvent(btnRank, OnClickRank);
         //UIHelper.AddButtonEvent(btnHowTo, OnClickHowTo);
+        UIHelper.AddButtonEvent(btnExit, OnClickExit);
     }
 
     public override void OnOpen()
@@ -84,5 +86,10 @@ public class UIHomeScreen : UIBase
     private void OnClickHowTo()
     {
         UIManager.Instance.ShowPopup(Define.UI.UIHowToScreen, out var _);
+    }
+
+    private void OnClickExit()
+    {
+        Application.Quit();
     }
 }
