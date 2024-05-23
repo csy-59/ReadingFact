@@ -103,4 +103,10 @@ public class UserManager : MonoSingleton<UserManager>
 
         return -1;
     }
+
+    private void OnDestroy()
+    {
+        var json = JsonUtility.ToJson(userInfos);
+        PlayerPrefs.SetString(Define.DefinePrefs.USER_INFO, json);
+    }
 }

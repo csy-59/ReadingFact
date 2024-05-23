@@ -34,7 +34,7 @@ public class UIRankScreen : UIBase
             txtImageRank[count - 1].SetText(info.Name);
         }
 
-        for(; count<3; ++count)
+        for (++count; count < 3; ++count)
         {
             txtTotalRank[count - 1].SetText(string.Format("{0}.", count));
             txtImageRank[count - 1].text = string.Empty;
